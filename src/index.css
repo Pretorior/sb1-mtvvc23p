@@ -1,0 +1,117 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-malibu-50: #F0F9FF;
+  --color-malibu-100: #92CCFE;
+  --color-malibu-200: #7BBCF9;
+  --color-malibu-300: #64ACF4;
+  --color-malibu-400: #4D9CEF;
+  --color-malibu-500: #368CEA;
+  
+  --color-feijoa-50: #F3FBF1;
+  --color-feijoa-100: #9DDD79;
+  --color-feijoa-200: #86D362;
+  --color-feijoa-300: #6FC94B;
+  --color-feijoa-400: #58BF34;
+  --color-feijoa-500: #41B51D;
+  
+  --color-apricot-50: #FEF6F3;
+  --color-apricot-100: #F6CBB2;
+  --color-apricot-200: #F4BC9B;
+  --color-apricot-300: #F2AD84;
+  --color-apricot-400: #F09E6D;
+  --color-apricot-500: #EE8F56;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-gray-900 bg-gray-50;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-full font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-malibu-400 to-malibu-500 text-white hover:from-malibu-500 hover:to-malibu-600 shadow-sm hover:shadow;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gradient-to-r from-feijoa-400 to-feijoa-500 text-white hover:from-feijoa-500 hover:to-feijoa-600 shadow-sm hover:shadow;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-malibu-400 text-malibu-500 hover:bg-malibu-50;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl border-2 border-gray-200 focus:border-malibu-300 focus:ring-2 focus:ring-malibu-100 focus:outline-none transition-colors;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-malibu-100 text-malibu-500;
+  }
+
+  .badge-secondary {
+    @apply badge bg-feijoa-100 text-feijoa-500;
+  }
+
+  .badge-accent {
+    @apply badge bg-apricot-100 text-apricot-500;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
